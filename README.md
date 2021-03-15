@@ -6,7 +6,7 @@ $ clang++ test.cpp
 
 $ ./a.out 100 (replace the number you want to test)
 
-$ chmod 777 test_push_swap.sh (only for the first time)
+$ chmod 777 test_push_swap.sh (first time only)
 
 $ sh test_push_swap.sh
 
