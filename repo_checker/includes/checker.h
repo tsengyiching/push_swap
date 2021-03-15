@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 10:45:57 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 10:46:04 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 17:18:16 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,6 @@ int					op_rotate_all(t_stack **stack_a, t_stack **stack_b);
 int					op_reverse(t_stack **stack);
 int					op_reverse_all(t_stack **stack_a, t_stack **stack_b);
 void				exec_op(char *buffer, t_stack **stack_a, t_stack **stack_b);
-
-/*
-** GET_NEXT_LINE_C
-*/
-int					get_next_line(int fd, char **line);
 
 /*
 ** CHECK_ERROR_C

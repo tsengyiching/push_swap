@@ -11,11 +11,10 @@ WHITE= \x1b[37m
 NAME		=		checker
 PATH_SRC	=		srcs/
 PATH_OBJ	=		objs/
-SRC			=		main.c					get_next_line.c\
+SRC			=		main.c					op_rotate_reverse.c\
 					list_utils.c			check_error.c\
 					op_swap_push.c			list_utils_add.c\
-					list_utils_delete.c		op_exec.c\
-					op_rotate_reverse.c
+					list_utils_delete.c		op_exec.c
 OBJ			=		$(addprefix $(PATH_OBJ), ${SRC:.c=.o})
 HEADER		=		includes/checker.h
 
