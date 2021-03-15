@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 14:55:34 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 17:20:42 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 17:52:11 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,15 @@ static int	ft_read_line(t_stock *save, int fd)
 	return (index_charset);
 }
 
+static void	check_stdin(t_stock *save, int fd)
+{
+	if (save->str[0] == '\0' && fd == 0)
+	{
+		free(save->str);
+		save->str = NULL;
+	}
+}		
+
 int			get_next_line(int fd, char **line)
 {
 	int				index_charset;
@@ -62,5 +71,6 @@ int			get_next_line(int fd, char **line)
 		free(save.str);
 		save.str = 0;
 	}
+	check_stdin(&save, fd);
 	return ((index_charset == 0) ? 0 : 1);
 }
