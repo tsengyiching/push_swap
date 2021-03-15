@@ -3,8 +3,11 @@
 ## Tester
 
 $ clang++ test.cpp 
+
 $ ./a.out 100 (replace the number you want to test)
+
 $ chmod 777 test_push_swap.sh (only for the first time)
+
 $ sh test_push_swap.sh
 
 Result:
