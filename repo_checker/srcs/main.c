@@ -6,13 +6,13 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 10:47:17 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 16:31:53 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 20:29:47 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int		display_checker(int result, t_stack **stack_a, t_stack **stack_b)
+int	display_checker(int result, t_stack **stack_a, t_stack **stack_b)
 {
 	ft_list_clear(stack_a);
 	ft_list_clear(stack_b);
@@ -28,7 +28,7 @@ int		display_checker(int result, t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-int		check_order(t_stack **stack_a, t_stack **stack_b)
+int	check_order(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack		*current;
 	int			size_a;
@@ -50,7 +50,7 @@ int		check_order(t_stack **stack_a, t_stack **stack_b)
 	return (display_checker(OK, stack_a, stack_b));
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	char		*buffer;
 	t_stack		*stack_a;
@@ -62,7 +62,8 @@ int		main(int argc, char **argv)
 		return (0);
 	if (!(check_error_nb(argv)))
 		return (return_error());
-	if (!(stack_a = create_list(argv)))
+	stack_a = create_list(argv);
+	if (!stack_a)
 		return (1);
 	while (get_next_line(0, &buffer) > 0)
 	{

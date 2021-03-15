@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 10:47:07 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 10:47:08 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 20:26:53 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,12 @@ void	delete_last(t_stack **lst, int size)
 	free(current);
 }
 
-int		ft_list_del_one(t_stack **lst, int order)
+int	ft_list_del_one(t_stack **lst, int order)
 {
 	int		size;
 
-	if (!(size = ft_list_size(*lst)))
+	size = ft_list_size(*lst);
+	if (size == 0)
 		return (0);
 	if (size == 1)
 		ft_list_clear(lst);
