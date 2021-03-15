@@ -71,11 +71,12 @@ int			op_reverse_all(t_stack **stack_a, t_stack **stack_b);
 int			return_error(void);
 int			check_error_nb(char **argv);
 int			is_in_order(t_stack *stack_a);
+void		free_malloc_fail(t_stack **stack_a, t_stack **stack_b);
 /*
 ** ALGO
 */
-int			three_sort(t_stack **stack_a);
-int			five_sort(t_stack **stack_a, t_stack **stack_b);
+void		sort_three(t_stack **stack_a, t_stack **stack_b);
+void		sort_five(t_stack **stack_a, t_stack **stack_b);
 int			sort_hundred(t_stack **stack_a, t_stack **stack_b);
 int			sort_five_hundred(t_stack **stack_a, t_stack **stack_b);
 int			find_max_nb(t_stack *stack);

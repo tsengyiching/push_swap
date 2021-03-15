@@ -12,12 +12,13 @@ NAME		=		push_swap
 PATH_SRC	=		srcs/
 PATH_OBJ	=		objs/
 SRC			=		main.c					list_utils.c\
-					check_error.c			algo_small_nb.c\
+					check_error.c			sort_three.c\
 					operation_swap.c		list_utils_delete.c\
 					list_utils_add.c		operation_push.c\
 					operation_rotate.c		operation_reverse_rotate.c\
 					sort_hundred.c			sort_utils.c\
-					divide_stack.c			sort_five_hundred.c
+					divide_stack.c			sort_five_hundred.c\
+					sort_five.c
 OBJ			=		$(addprefix $(PATH_OBJ), ${SRC:.c=.o})
 HEADER		=		includes/push_swap.h
 

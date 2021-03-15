@@ -37,15 +37,9 @@ int		start_algo(t_stack **stack_a, t_stack **stack_b)
 	if (size == 2)
 		op_swap_a(*stack_a);
 	else if (size == 3)
-	{
-		if (!(three_sort(stack_a)))
-			return (0);
-	}
+		sort_three(stack_a, stack_b);
 	else if (size <= 5)
-	{
-		if (!(five_sort(stack_a, stack_b)))
-			return (0);
-	}
+		sort_five(stack_a, stack_b);
 	// if (!(check_order_reverse(*stack_a)))
 	// {
 	// 	if (!(sort_stack_a_reverse(stack_a, stack_b)))

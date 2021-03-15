@@ -36,3 +36,10 @@ t_stack		*ft_list_find(t_stack *lst, int order)
 	}
 	return (lst);
 }
+
+void	free_malloc_fail(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_list_clear(stack_a);
+	ft_list_clear(stack_b);
+	exit(1);
+}
