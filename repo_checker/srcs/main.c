@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 10:47:17 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 10:47:17 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 16:14:47 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,9 @@ int		main(int argc, char **argv)
 	{
 		exec_op(buffer, &stack_a, &stack_b);
 		free(buffer);
+		buffer = NULL;
 	}
+	if (buffer != NULL)
+		free(buffer);
 	return (check_order(&stack_a, &stack_b));
 }

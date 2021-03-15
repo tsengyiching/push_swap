@@ -22,7 +22,7 @@ HEADER		=		includes/checker.h
 LIBFT		=		../libft/libft.a
 LIB			= 		libft.a
 
-CC			=		gcc
+CC			=		clang
 FLAGS		=		-Wall -Werror -Wextra
 RM			=		rm -rf
 
