@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 14:55:34 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 17:52:11 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 18:06:48 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_read_line(t_stock *save, int fd)
 
 static void	check_stdin(t_stock *save, int fd)
 {
-	if (save->str[0] == '\0' && fd == 0)
+	if (save->str != NULL && fd == 0)
 	{
 		free(save->str);
 		save->str = NULL;
