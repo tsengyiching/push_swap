@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 10:47:17 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 16:14:47 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/15 16:31:53 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,10 @@ int		check_order(t_stack **stack_a, t_stack **stack_b)
 
 int		main(int argc, char **argv)
 {
-	int			i;
 	char		*buffer;
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 
-	i = 1;
 	buffer = NULL;
 	stack_b = NULL;
 	if (argc == 1)

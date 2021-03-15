@@ -67,11 +67,9 @@ int		start_algo(t_stack **stack_a, t_stack **stack_b)
 
 int     main(int argc, char **argv)
 {
-	int			i;
 	t_stack 	*stack_a;
 	t_stack		*stack_b;
 
-	i = 1;
 	stack_b = NULL;
 	if (argc == 1)
 		return (0);

@@ -8,3 +8,4 @@ push_swap_visualizer/
 pyviz.py
 .vscode/
 *.DS_Store
+test_push_swap.sh
