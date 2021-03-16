@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 10:47:22 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 10:47:23 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 10:48:33 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	exec_op(char *buffer, t_stack **stack_a, t_stack **stack_b)
 		exec_op_push(buffer, stack_a, stack_b);
 	else if (buffer[0] == 'r' && size_char == 2)
 		exec_op_rotate(buffer, stack_a, stack_b);
-	else if (buffer[0] == 'r' && buffer[1] == 'r' && size_char == 3)
+	else if (buffer[0] == 'r' && size_char == 3)
 		exec_op_reverse(buffer, stack_a, stack_b);
 	else
 		free_all_malloc(buffer, stack_a, stack_b);
