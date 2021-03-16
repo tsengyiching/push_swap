@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 14:57:42 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/16 11:24:39 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 12:50:58 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,25 @@ int	ft_strchr(const char *str, int charset)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-	size_t	i;
-	size_t	maxsize;
+	char			*dst;
+	unsigned int	i;
 
-	i = -1;
-	if (s == 0)
+	if (!s)
+		return (0);
+	if (ft_strlen(s) < start)
+		return (ft_calloc(1, 1));
+	if (ft_strlen(s) < len)
+		len = ft_strlen(s) - start;
+	dst = ft_calloc(sizeof(char), (len + 1));
+	if (!dst)
 		return (NULL);
-	// if (start >= ft_strlen(s))
-	// 	start = 0;
-	// else
-	// 	start = len;
-	// maxsize = start;
-	maxsize = ((start >= ft_strlen(s)) ? 0 : len);
-	str = malloc(sizeof(char) * (maxsize + 1));
-	if (!str)
-		return (NULL);
-	while (++i < maxsize && s[start + i])
-		str[i] = s[start + i];
-	str[i] = '\0';
-	return (str);
+	i = 0;
+	while (s[start + i] && i < len)
+	{
+		dst[i] = s[start + i];
+		i++;
+	}
+	return (dst);
 }
 
 char	*ft_strjoin(char *s1, char const *s2)

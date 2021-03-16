@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:44:21 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/16 11:30:52 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 12:47:37 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ char		*ft_strjoin(char *s1, char const *s2);
 int			ft_atoi(const char *str);
 int			ft_isdigit(int c);
 void		ft_putstr_fd(char *s, int fd);
+void		ft_bzero(void *s, size_t n);
+void		*ft_calloc(size_t count, size_t size);
 int			ft_strcmp(const char *s1, const char *s2);
 #endif

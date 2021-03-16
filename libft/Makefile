@@ -13,7 +13,8 @@ PATH_OBJS	=	objs/
 NAME		=	libft.a
 SRCS		=	ft_atoi.c			ft_putstr_fd.c\
 				get_next_line.c		get_next_line_utils.c\
-				ft_isdigit.c		ft_strcmp.c
+				ft_isdigit.c		ft_strcmp.c\
+				ft_calloc.c 		ft_bzero.c
 CFLAGS		=	-Wall -Wextra -Werror
 OBJS		=	$(addprefix $(PATH_OBJS), ${SRCS:.c=.o})
 HEAD		=	libft.h
