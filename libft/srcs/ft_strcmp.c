@@ -6,15 +6,15 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:42:38 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 17:29:44 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 10:19:20 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (s1 == NULL)

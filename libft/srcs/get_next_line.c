@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 14:55:34 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 18:11:05 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 11:14:50 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ static int	ft_read_line(t_stock *save, int fd)
 	char	*temp;
 	char	buf[BUFFER_SIZE + 1];
 
-	while (!(index_charset = ft_strchr((save->str), '\n')) && save->eof == 0)
+	index_charset = ft_strchr((save->str), '\n');
+	while (!index_charset && save->eof == 0)
 	{
-		if ((ret = read(fd, buf, BUFFER_SIZE)) == -1)
+		ret = read(fd, buf, BUFFER_SIZE);
+		if (ret == -1)
 			return (-1);
 		buf[ret] = '\0';
 		temp = save->str;
@@ -33,6 +35,7 @@ static int	ft_read_line(t_stock *save, int fd)
 			save->eof = 1;
 			break ;
 		}
+		index_charset = ft_strchr((save->str), '\n');
 	}
 	return (index_charset);
 }
@@ -46,25 +49,31 @@ static void	check_stdin(t_stock *save, int fd)
 	}
 }		
 
-int			get_next_line(int fd, char **line)
+void	find_new_line(char **line, t_stock *save, int index_charset)
+{
+	char	*temp;
+
+	*line = ft_substr(save->str, 0, index_charset - 1);
+	temp = ft_substr(save->str, index_charset, ft_strlen(save->str));
+	free(save->str);
+	save->str = temp;
+}
+
+int	get_next_line(int fd, char **line)
 {
 	int				index_charset;
-	char			*temp;
 	static t_stock	save;
 
 	if (fd < 0 || !line || BUFFER_SIZE <= 0)
 		return (-1);
 	if (!save.str)
 		save.eof = 0;
-	if ((index_charset = ft_read_line(&save, fd)) == -1)
+	index_charset = ft_read_line(&save, fd);
+	if (index_charset == -1)
 		return (-1);
-	if ((index_charset = ft_strchr((save.str), '\n')) > 0)
-	{
-		*line = ft_substr(save.str, 0, index_charset - 1);
-		temp = ft_substr(save.str, index_charset, ft_strlen(save.str));
-		free(save.str);
-		save.str = temp;
-	}
+	index_charset = ft_strchr((save.str), '\n');
+	if (index_charset > 0)
+		find_new_line(line, &save, index_charset);
 	else
 	{
 		*line = ft_substr((save.str), 0, ft_strlen(save.str));
@@ -72,5 +81,8 @@ int			get_next_line(int fd, char **line)
 		save.str = 0;
 	}
 	check_stdin(&save, fd);
-	return ((index_charset == 0) ? 0 : 1);
+	if (index_charset == 0)
+		return (0);
+	else
+		return (1);
 }

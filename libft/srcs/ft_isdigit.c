@@ -6,13 +6,13 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 10:48:09 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 17:27:05 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 11:26:24 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

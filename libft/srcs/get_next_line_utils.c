@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 14:57:42 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/15 17:20:24 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 11:24:39 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	if (!s)
 		return (0);
@@ -24,9 +24,9 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int		ft_strchr(const char *str, int charset)
+int	ft_strchr(const char *str, int charset)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -49,8 +49,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = -1;
 	if (s == 0)
 		return (NULL);
+	// if (start >= ft_strlen(s))
+	// 	start = 0;
+	// else
+	// 	start = len;
+	// maxsize = start;
 	maxsize = ((start >= ft_strlen(s)) ? 0 : len);
-	if (!(str = malloc(sizeof(char) * (maxsize + 1))))
+	str = malloc(sizeof(char) * (maxsize + 1));
+	if (!str)
 		return (NULL);
 	while (++i < maxsize && s[start + i])
 		str[i] = s[start + i];
@@ -68,8 +74,8 @@ char	*ft_strjoin(char *s1, char const *s2)
 		return (ft_substr(s2, 0, ft_strlen(s2)));
 	if (!s2)
 		return (ft_substr(s1, 0, ft_strlen(s1)));
-	if (!(dst = (char *)malloc(sizeof(char) *
-					(ft_strlen(s1) + ft_strlen(s2) + 1))))
+	dst = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!dst)
 		return (NULL);
 	i = 0;
 	while (s1[i])

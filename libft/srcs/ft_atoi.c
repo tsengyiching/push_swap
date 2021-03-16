@@ -6,17 +6,17 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 16:38:24 by yictseng          #+#    #+#             */
-/*   Updated: 2020/11/18 16:38:26 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 10:19:44 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	long		i;
-	long		sign;
-	long		result;
+	long	i;
+	long	sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
