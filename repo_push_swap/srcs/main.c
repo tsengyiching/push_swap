@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 12:11:56 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/16 15:45:46 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:01:58 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	start_algo(t_stack **stack_a, t_stack **stack_b)
 		}
 		if (size <= 100)
 			sort_hundred(stack_a, stack_b);
-		// else if (size > 100)
-		// 	sort_five_hundred(stack_a, stack_b);
+		else if (size > 100)
+			sort_five_hundred(stack_a, stack_b);
 	}
 	return (1);
 }

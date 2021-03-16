@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-int		op_rotate(t_stack **stack)
+int	op_rotate(t_stack **stack)
 {
 	int			size;
 	t_stack		*new;
@@ -8,7 +8,8 @@ int		op_rotate(t_stack **stack)
 	size = ft_list_size(*stack);
 	if (size == 0 || size == 1)
 		return (1);
-	if (!(new = ft_list_new((*stack)->content)))
+	new = ft_list_new((*stack)->content);
+	if (!new)
 		return (0);
 	ft_list_del_one(stack, FIRST);
 	if (!(ft_list_addback(stack, new)))
@@ -16,7 +17,7 @@ int		op_rotate(t_stack **stack)
 	return (1);
 }
 
-int		op_rotate_a(t_stack **stack_a)
+int	op_rotate_a(t_stack **stack_a)
 {
 	if (!(op_rotate(stack_a)))
 		return (0);
@@ -24,7 +25,7 @@ int		op_rotate_a(t_stack **stack_a)
 	return (1);
 }
 
-int		op_rotate_b(t_stack **stack_b)
+int	op_rotate_b(t_stack **stack_b)
 {
 	if (!(op_rotate(stack_b)))
 		return (0);
@@ -32,7 +33,7 @@ int		op_rotate_b(t_stack **stack_b)
 	return (1);
 }
 
-int		op_rotate_all(t_stack **stack_a, t_stack **stack_b)
+int	op_rotate_all(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!(op_rotate(stack_a)))
 		return (0);

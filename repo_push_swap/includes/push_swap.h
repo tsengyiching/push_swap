@@ -6,39 +6,37 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 12:14:24 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/16 16:28:33 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:39:36 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include "../../libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include "../../libft/libft.h"
 
-#define FIRST 0
-#define	LAST 1
-#define	OK 0
-#define KO 1
-#define MAX_TOP 1
-#define MIN_TOP 2
-#define MAX_BOTTOM 3
-#define MIN_BOTTOM 4
+# define FIRST 0
+# define LAST 1
+# define MAX_TOP 1
+# define MIN_TOP 2
+# define MAX_BOTTOM 3
+# define MIN_BOTTOM 4
 
 /*
 ** LINKED LIST
 */
-typedef struct		s_stack
+typedef struct s_stack
 {
 	int				content;
-	struct			s_stack *previous;
-	struct			s_stack *head;
-	struct			s_stack *next;
+	struct s_stack	*previous;
+	struct s_stack	*head;
+	struct s_stack	*next;
 }					t_stack;
 
-typedef struct		s_index
+typedef struct s_index
 {
 	int				min;
 	int				max;
@@ -52,16 +50,15 @@ typedef struct		s_index
 	int				bottom_max_pos;
 }					t_index;
 
-
 t_stack		*ft_list_new(int nb);
-t_stack	    *ft_list_last(t_stack *lst);
+t_stack		*ft_list_last(t_stack *lst);
+t_stack		*create_list(char **argv);
+t_stack		*ft_list_find(t_stack *lst, int order);
 int			ft_list_addback(t_stack **alst, t_stack *new);
 int			ft_list_addfront(t_stack **alst, t_stack *new);
 int			ft_list_clear(t_stack **lst);
 int			ft_list_size(t_stack *lst);
 int			ft_list_del_one(t_stack **lst, int order);
-t_stack		*create_list(char **argv);
-t_stack		*ft_list_find(t_stack *lst, int order);
 int			ft_list_del_num(t_stack **lst, int number);
 /*
 ** OPERATION FUNCTIONS
@@ -89,8 +86,11 @@ void		free_malloc_fail(t_stack **stack_a, t_stack **stack_b);
 */
 void		sort_three(t_stack **stack_a, t_stack **stack_b);
 void		sort_five(t_stack **stack_a, t_stack **stack_b);
-void			sort_hundred(t_stack **stack_a, t_stack **stack_b);
-//int			sort_five_hundred(t_stack **stack_a, t_stack **stack_b);
+void		sort_hundred(t_stack **stack_a, t_stack **stack_b);
+void		sort_five_hundred(t_stack **stack_a, t_stack **stack_b);
+void		sort_stack_b(t_stack **stack_a, t_stack **stack_b, t_index *index);
+void		sort_stack_a(t_stack **stack_a, t_stack **stack_b);
+void		divide_stack(t_stack **stack_a, t_stack **stack_b, int pos);
 int			find_max_nb(t_stack *stack);
 int			find_min_nb(t_stack *stack);
 int			find_top_list_index(t_stack *stack, int nb);
@@ -103,9 +103,6 @@ int			find_top_list_index(t_stack *stack, int nb);
 int			is_smaller_value_exist(t_stack *stack_a, int value);
 int			is_middle_value_exist(t_stack *stack_a, int min, int max);
 int			is_bigger_value_exist(t_stack *stack_a, int value);
-void		divide_stack(t_stack **stack_a, t_stack **stack_b, int pos);
 int			init_index(t_stack *stack_a, t_index *index);
-void		sort_stack_b(t_stack **stack_a, t_stack **stack_b, t_index *index);
-void		sort_stack_a(t_stack **stack_a, t_stack **stack_b);
 int			find_quick_way(t_index *index, t_stack *stack_b);
 #endif

@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-int		op_reverse(t_stack **stack)
+int	op_reverse(t_stack **stack)
 {
 	int			size;
 	t_stack		*new;
@@ -10,7 +10,8 @@ int		op_reverse(t_stack **stack)
 	if (size == 0 || size == 1)
 		return (1);
 	last = ft_list_last(*stack);
-	if (!(new = ft_list_new(last->content)))
+	new = ft_list_new(last->content);
+	if (!new)
 		return (0);
 	ft_list_del_one(stack, LAST);
 	if (!(ft_list_addfront(stack, new)))
@@ -18,7 +19,7 @@ int		op_reverse(t_stack **stack)
 	return (1);
 }
 
-int		op_reverse_a(t_stack **stack_a)
+int	op_reverse_a(t_stack **stack_a)
 {
 	if (!(op_reverse(stack_a)))
 		return (0);
@@ -26,7 +27,7 @@ int		op_reverse_a(t_stack **stack_a)
 	return (1);
 }
 
-int		op_reverse_b(t_stack **stack_b)
+int	op_reverse_b(t_stack **stack_b)
 {
 	if (!(op_reverse(stack_b)))
 		return (0);
@@ -34,7 +35,7 @@ int		op_reverse_b(t_stack **stack_b)
 	return (1);
 }
 
-int		op_reverse_all(t_stack **stack_a, t_stack **stack_b)
+int	op_reverse_all(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!(op_reverse(stack_a)))
 		return (0);
