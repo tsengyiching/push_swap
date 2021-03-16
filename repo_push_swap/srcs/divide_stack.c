@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   divide_stack.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 15:51:38 by yictseng          #+#    #+#             */
+/*   Updated: 2021/03/16 15:51:39 by yictseng         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-int		is_smaller_value_exist(t_stack *stack_a, int value)
+int	is_smaller_value_exist(t_stack *stack_a, int value)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	while (stack_a)
@@ -15,9 +27,9 @@ int		is_smaller_value_exist(t_stack *stack_a, int value)
 	return (-1);
 }
 
-int		is_middle_value_exist(t_stack *stack_a, int min, int max)
+int	is_middle_value_exist(t_stack *stack_a, int min, int max)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	while (stack_a)
@@ -30,9 +42,9 @@ int		is_middle_value_exist(t_stack *stack_a, int min, int max)
 	return (-1);
 }
 
-int		is_bigger_value_exist(t_stack *stack_a, int value)
+int	is_bigger_value_exist(t_stack *stack_a, int value)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	while (stack_a)
@@ -45,17 +57,16 @@ int		is_bigger_value_exist(t_stack *stack_a, int value)
 	return (-1);
 }
 
-int		divide_stack(t_stack **stack_a, t_stack **stack_b, int pos)
+void	divide_stack(t_stack **stack_a, t_stack **stack_b, int pos)
 {
 	if (pos == -1)
-		return (1);
+		return ;
 	while (pos > 0)
 	{
 		if (!(op_rotate_a(stack_a)))
-			return (0);
+			free_malloc_fail(stack_a, stack_b);
 		pos--;
 	}
 	if (!(op_push_b(stack_a, stack_b)))
-		return (0);
-	return (1);
+		free_malloc_fail(stack_a, stack_b);
 }

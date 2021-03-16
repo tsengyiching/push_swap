@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 12:11:29 by yictseng          #+#    #+#             */
+/*   Updated: 2021/03/16 12:11:30 by yictseng         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-int			ft_list_size(t_stack *lst)
+int	ft_list_size(t_stack *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (lst)
@@ -13,7 +25,7 @@ int			ft_list_size(t_stack *lst)
 	return (i);
 }
 
-t_stack		*ft_list_last(t_stack *lst)
+t_stack	*ft_list_last(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -22,7 +34,7 @@ t_stack		*ft_list_last(t_stack *lst)
 	return (lst);
 }
 
-t_stack		*ft_list_find(t_stack *lst, int order)
+t_stack	*ft_list_find(t_stack *lst, int order)
 {
 	int	i;
 

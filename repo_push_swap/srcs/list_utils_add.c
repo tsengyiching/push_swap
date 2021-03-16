@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_utils_add.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 12:11:16 by yictseng          #+#    #+#             */
+/*   Updated: 2021/03/16 12:11:17 by yictseng         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-t_stack		*ft_list_new(int nb)
+t_stack	*ft_list_new(int nb)
 {
-	t_stack		*new;
+	t_stack	*new;
 
-	if (!(new = (t_stack *)malloc(sizeof(*new))))
+	new = (t_stack *)malloc(sizeof(*new));
+	if (!new)
 		return (NULL);
 	new->content = nb;
 	new->next = NULL;
@@ -13,9 +26,9 @@ t_stack		*ft_list_new(int nb)
 	return (new);
 }
 
-int			ft_list_addback(t_stack **alst, t_stack *new)
+int	ft_list_addback(t_stack **alst, t_stack *new)
 {
-	t_stack		*ptr;
+	t_stack	*ptr;
 
 	if (!new || !alst)
 		return (0);
@@ -31,7 +44,7 @@ int			ft_list_addback(t_stack **alst, t_stack *new)
 	return (1);
 }
 
-int			ft_list_addfront(t_stack **alst, t_stack *new)
+int	ft_list_addfront(t_stack **alst, t_stack *new)
 {
 	if (!new || !alst)
 		return (0);
@@ -47,11 +60,11 @@ int			ft_list_addfront(t_stack **alst, t_stack *new)
 	return (1);
 }
 
-t_stack		*create_list(char **argv)
+t_stack	*create_list(char **argv)
 {
-	int			i;
-	t_stack		*new;
-	t_stack		*lst;
+	int		i;
+	t_stack	*new;
+	t_stack	*lst;
 
 	i = 1;
 	lst = NULL;

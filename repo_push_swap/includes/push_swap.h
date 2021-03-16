@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 12:14:24 by yictseng          #+#    #+#             */
+/*   Updated: 2021/03/16 16:28:33 by yictseng         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -77,10 +89,12 @@ void		free_malloc_fail(t_stack **stack_a, t_stack **stack_b);
 */
 void		sort_three(t_stack **stack_a, t_stack **stack_b);
 void		sort_five(t_stack **stack_a, t_stack **stack_b);
-int			sort_hundred(t_stack **stack_a, t_stack **stack_b);
-int			sort_five_hundred(t_stack **stack_a, t_stack **stack_b);
+void			sort_hundred(t_stack **stack_a, t_stack **stack_b);
+//int			sort_five_hundred(t_stack **stack_a, t_stack **stack_b);
 int			find_max_nb(t_stack *stack);
 int			find_min_nb(t_stack *stack);
+int			find_top_list_index(t_stack *stack, int nb);
+int			find_bottom_list_index(t_stack *stack, int nb);
 int			find_top_max_pos(t_stack *stack);
 int			find_bottom_max_pos(t_stack *stack);
 int			find_top_min_pos(t_stack *stack);
@@ -89,8 +103,9 @@ int			find_top_list_index(t_stack *stack, int nb);
 int			is_smaller_value_exist(t_stack *stack_a, int value);
 int			is_middle_value_exist(t_stack *stack_a, int min, int max);
 int			is_bigger_value_exist(t_stack *stack_a, int value);
-int			divide_stack(t_stack **stack_a, t_stack **stack_b, int pos);
+void		divide_stack(t_stack **stack_a, t_stack **stack_b, int pos);
 int			init_index(t_stack *stack_a, t_index *index);
-int			sort_stack_b(t_stack **stack_a, t_stack **stack_b, t_index *index);
-int			sort_stack_a(t_stack **stack_a);
+void		sort_stack_b(t_stack **stack_a, t_stack **stack_b, t_index *index);
+void		sort_stack_a(t_stack **stack_a, t_stack **stack_b);
+int			find_quick_way(t_index *index, t_stack *stack_b);
 #endif

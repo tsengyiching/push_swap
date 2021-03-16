@@ -18,7 +18,9 @@ SRC			=		main.c					list_utils.c\
 					operation_rotate.c		operation_reverse_rotate.c\
 					sort_hundred.c			sort_utils.c\
 					divide_stack.c			sort_five_hundred.c\
-					sort_five.c
+					sort_five.c				init_divide_value.c\
+					find_value_index.c		find_quick_way.c\
+					sort_stack_b.c
 OBJ			=		$(addprefix $(PATH_OBJ), ${SRC:.c=.o})
 HEADER		=		includes/push_swap.h
 

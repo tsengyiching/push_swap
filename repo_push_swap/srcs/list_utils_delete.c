@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_utils_delete.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 12:11:22 by yictseng          #+#    #+#             */
+/*   Updated: 2021/03/16 12:11:24 by yictseng         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-int		ft_list_clear(t_stack **lst)
+int	ft_list_clear(t_stack **lst)
 {
 	t_stack	*tmp;
 
@@ -37,11 +49,12 @@ void	delete_last(t_stack **lst, int size)
 	free(current);
 }
 
-int		ft_list_del_one(t_stack **lst, int order)
+int	ft_list_del_one(t_stack **lst, int order)
 {
-	int		size;
+	int	size;
 
-	if (!(size = ft_list_size(*lst)))
+	size = ft_list_size(*lst);
+	if (!size)
 		return (0);
 	if (size == 1)
 		ft_list_clear(lst);
@@ -55,7 +68,7 @@ int		ft_list_del_one(t_stack **lst, int order)
 	return (1);
 }
 
-int		ft_list_del_num(t_stack **lst, int number)
+int	ft_list_del_num(t_stack **lst, int number)
 {
 	int			size;
 	int			pos;

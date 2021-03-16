@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 15:51:21 by yictseng          #+#    #+#             */
+/*   Updated: 2021/03/16 15:51:22 by yictseng         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-int		find_max_nb(t_stack *stack)
+int	find_max_nb(t_stack *stack)
 {
 	int	max;
 
@@ -15,7 +27,7 @@ int		find_max_nb(t_stack *stack)
 	return (max);
 }
 
-int		find_min_nb(t_stack *stack)
+int	find_min_nb(t_stack *stack)
 {
 	int	min;
 
@@ -30,24 +42,7 @@ int		find_min_nb(t_stack *stack)
 	return (min);
 }
 
-// int		find_list_index(t_stack *stack, int nb)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (!stack)
-// 		return (-1);
-// 	while (stack)
-// 	{
-// 		if (stack->content == nb)
-// 			return (i);
-// 		stack = stack->next;
-// 		i++;
-// 	}
-// 	return (-1);
-// }
-
-int		find_top_list_index(t_stack *stack, int nb)
+int	find_top_list_index(t_stack *stack, int nb)
 {
 	int	i;
 
@@ -64,10 +59,10 @@ int		find_top_list_index(t_stack *stack, int nb)
 	return (-1);
 }
 
-int		find_bottom_list_index(t_stack *stack, int nb)
+int	find_bottom_list_index(t_stack *stack, int nb)
 {
 	int		i;
-	t_stack *last;
+	t_stack	*last;
 
 	i = 0;
 	if (!stack)
@@ -81,44 +76,4 @@ int		find_bottom_list_index(t_stack *stack, int nb)
 		i++;
 	}
 	return (-1);
-}
-
-int		find_top_max_pos(t_stack *stack)
-{
-	int	max;
-	int	pos;
-
-	max = find_max_nb(stack);
-	pos = find_top_list_index(stack, max);
-	return (pos);
-}
-
-int		find_bottom_max_pos(t_stack *stack)
-{
-	int	max;
-	int	pos;
-
-	max = find_max_nb(stack);
-	pos = find_bottom_list_index(stack, max);
-	return (pos);
-}
-
-int		find_top_min_pos(t_stack *stack)
-{
-	int	min;
-	int	pos;
-
-	min = find_min_nb(stack);
-	pos = find_top_list_index(stack, min);
-	return (pos);
-}
-
-int		find_bottom_min_pos(t_stack *stack)
-{
-	int	min;
-	int	pos;
-
-	min = find_min_nb(stack);
-	pos = find_bottom_list_index(stack, min);
-	return (pos);
 }
