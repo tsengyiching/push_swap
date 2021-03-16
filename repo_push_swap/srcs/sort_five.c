@@ -6,7 +6,7 @@
 /*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 12:11:38 by yictseng          #+#    #+#             */
-/*   Updated: 2021/03/16 12:39:02 by yictseng         ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 19:15:11 by yictseng         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ int	second_party(int position, t_stack **stack_a, t_stack **stack_b)
 	return (1);
 }
 
-int	first_party(int position, int size_a,
-						t_stack **stack_a, t_stack **stack_b)
+int	first_party(int position, int size_a, t_stack **stack_a, t_stack **stack_b)
 {
 	if (position == 0)
 	{
