@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yictseng <yictseng@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/16 12:11:38 by yictseng          #+#    #+#             */
+/*   Updated: 2021/03/16 12:39:02 by yictseng         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-void	second_party(int position, t_stack **stack_a, t_stack **stack_b)
+int	second_party(int position, t_stack **stack_a, t_stack **stack_b)
 {
 	if (position == 2)
 	{
@@ -19,9 +31,12 @@ void	second_party(int position, t_stack **stack_a, t_stack **stack_b)
 		if (!(op_rotate_a(stack_a)))
 			free_malloc_fail(stack_a, stack_b);
 	}
+	else
+		return (0);
+	return (1);
 }
 
-void	first_party(int position, int size_a,
+int	first_party(int position, int size_a,
 						t_stack **stack_a, t_stack **stack_b)
 {
 	if (position == 0)
@@ -46,9 +61,12 @@ void	first_party(int position, int size_a,
 		if (!(op_rotate_a(stack_a)))
 			free_malloc_fail(stack_a, stack_b);
 	}
+	else
+		return (0);
+	return (1);
 }
 
-int		find_position(t_stack *stack_a, t_stack *stack_b)
+int	find_position(t_stack *stack_a, t_stack *stack_b)
 {
 	int		position;
 
@@ -80,8 +98,8 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 	{
 		size_a = ft_list_size(*stack_a);
 		position = find_position(*stack_a, *stack_b);
-		first_party(position, size_a, stack_a, stack_b);
-		second_party(position, stack_a, stack_b);
+		if (!first_party(position, size_a, stack_a, stack_b))
+			second_party(position, stack_a, stack_b);
 		i--;
 	}
 }
